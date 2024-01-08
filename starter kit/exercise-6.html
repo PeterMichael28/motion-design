@@ -142,7 +142,7 @@
 		.accordion--item {
 			background-repeat: no-repeat;
 			background-position: center;
-			background-size: cover;
+			background-size: 200%;
 			border-radius: 1rem;
 			padding: 2rem;
 			display: flex;
@@ -153,6 +153,7 @@
 			cursor: pointer;
 			position: relative;
 			overflow: hidden;
+			/* mix-blend-mode: screen; */
 		}
 
 		.date li:nth-child(1) {
@@ -162,6 +163,7 @@
 
 		.date li:nth-child(2) {
 			font-size: 0.8125rem;
+			transition-property: color;
 		}
 
 		.temp {
@@ -169,6 +171,8 @@
 			flex-direction: column;
 			gap: 1.5rem;
 			opacity: 0;
+			transform: translate3d(0, -4rem, 0);
+			transition-property: opacity, transform;
 		}
 
 		.temp p {
@@ -202,6 +206,8 @@
 			gap: 1rem;
 			width: 28rem;
 			opacity: 0;
+			transform: translate3d(0, 4rem, 0);
+			transition-property: opacity, transform;
 		}
 
 		.readings li {
@@ -228,6 +234,7 @@
 		.bottom-temp {
 			position: absolute;
 			bottom: 2rem;
+			transition-property: transform, opacity;
 		}
 
 		.opened {
@@ -249,11 +256,44 @@
 			opacity: 0;
 		}
 
+		.opened .temp,
+		.opened .readings {
+			transform: translate3d(0, 0, 0);
+
+		}
+
 
 		/* Air */
 		/* In the video I'm using the following icons and imagery: */
 		/* - https://elements.envato.com/photo-realistic-weather-icon-set-K7MGJ3 */
 		/* - https://elements.envato.com/weather-icon-pack-3UHW3R3 */
+
+		.accordion--item {
+			transition-property: flex-basis, background-size, padding;
+		}
+
+		.accordion--item:hover:not(.opened) {
+			background-size: 28rem;
+			padding-block: 3rem;
+		}
+
+		.accordion--item:hover:not(.opened) .bottom-temp {
+			transform: translate3d(0, -1rem, 0);
+		}
+
+		.opened .bottom-temp {
+			transform: translate3d(0, 2rem, 0);
+			opacity: 0;
+		}
+		.accordion--item,
+		.bottom-temp,
+		.temp,
+		.readings,
+		.date li:nth-child(2) {
+			
+			transition-timing-function: ease-in-out;
+			transition-duration: 0.6s;
+		}
 	</style>
 </head>
 <body>
