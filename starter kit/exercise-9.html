@@ -54,13 +54,79 @@
 				transform: rotate(1turn) scale(1.2);
 			}
 		}
+
+		svg {
+			width: 26rem;
+			/* color: white; */
+			font-weight: 700;
+		}
+
+		.text-svg {
+			/* fill: wheat; */
+			font-size: 4rem;
+			fill: transparent;
+			/* stroke-width: 2; */
+			/* stroke: wheat; */
+			letter-spacing: -3px;
+			
+		}
+
+		svg text {
+			animation: animate-stroke 4s linear  infinite alternate;
+		}
+
+		@keyframes animate-stroke {
+			0%{ 
+				fill: transparent;
+				stroke: wheat;
+				stroke-width: 3;
+				stroke-dashoffset: 25%;
+				stroke-dasharray: 0 32%;
+			} 
+			50% {
+				fill: transparent;
+				stroke: wheat;
+				stroke-width: 3;
+			}
+			80%, 100% {
+				fill: wheat;
+				stroke: transparent;
+				stroke-width: 0;
+				stroke-dashoffset: 0;
+				
+				stroke-dasharray:32% 0 ;
+			}
+		}
 	</style>
 </head>
 <body>
 	<div class="loader-container">
 		<!-- Air -->
 
-		<div class="load"></div>
+		<!-- <div class="load"></div> -->
+
+
+
+		<!-- text svg -->
+		<svg viewBox="0 0 500 190">
+			<text x="50%" y="50%" dy=".32em" text-anchor="middle" class="text-svg">
+				Loading
+			</text>
+			<text x="50%" y="50%" dy="1.7rem" dx="2.3em" text-anchor="middle" class="text-svg">
+				...
+			</text>
+
+		</svg>
+
+		<svg viewBox="0 0 500 190">
+			<text x="50%" y="50%" dy=".32em" text-anchor="middle" class="text-svg">
+				Graphix
+			</text>
+			<text x="50%" y="50%" dy="1.3rem" dx="2.3em" text-anchor="middle" class="text-svg">
+				...
+			</text>
+
+		</svg>
 	</div>
 </body>
 </html>
