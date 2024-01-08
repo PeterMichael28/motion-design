@@ -36,6 +36,8 @@
 			font-size: 16px;
 			font-family: 'Plus Jakarta Sans', sans-serif;
 			line-height: 120%;
+			height: 100%;
+			color: white;
 		}
 
 		img {
@@ -43,11 +45,12 @@
 		}
 
 		#hero {
-			background: linear-gradient(to bottom, #151618 64%, white 36%);
-			color: white;
+			background: #151618;
 			display: flex;
 			flex-direction: column;
 			gap: 4rem;
+			height: 100%;
+			width: 100%;
 		}
 
 		#hero ul {
@@ -94,7 +97,7 @@
 
 		#hero .accordion {
 			width: 100%;
-			margin: 0 4rem;
+			margin: 0 2rem;
 			display: flex;
 			gap: 1rem;
 			justify-content: center;
@@ -105,7 +108,7 @@
 		}
 
 		.cloudy {
-			background: var(--color-cloudy) url(/images/cloudy@c.png);
+			background: var(--color-cloudy) url(images/tom.jpg);
 		}
 
 		.cloudy .readings li {
@@ -113,7 +116,7 @@
 		}
 
 		.sunny {
-			background: var(--color-sunny) url(images/sunny@c.png);
+			background: var(--color-sunny) url(images/sunny.jpg);
 		}
 
 		.sunny .readings li {
@@ -121,7 +124,7 @@
 		}
 
 		.rainy {
-			background: var(--color-rainy) url(images/rainy@c.png);
+			background: var(--color-rainy) url(images/raining2.jpg);
 		}
 
 		.rainy .readings li {
@@ -129,7 +132,7 @@
 		}
 
 		.thunderstorms {
-			background: var(--color-thunderstorms) url(images/thunderstorms@c.png);
+			background: var(--color-thunderstorms) url(images/thunder.avif);
 		}
 
 		.thunderstorms .readings li {
@@ -138,8 +141,8 @@
 
 		.accordion--item {
 			background-repeat: no-repeat;
-			background-position: center center;
-			background-size: 200%;
+			background-position: center;
+			background-size: cover;
 			border-radius: 1rem;
 			padding: 2rem;
 			display: flex;
@@ -228,7 +231,7 @@
 		}
 
 		.opened {
-			background-size: 32rem;
+			background-size: cover;
 			flex-basis: 32rem;
 			cursor: auto;
 		}
