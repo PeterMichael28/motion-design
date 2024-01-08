@@ -15,7 +15,7 @@
 
 	<style>
 		:root {
-			--def-transition-duration: .2s;
+			--def-transition-duration: .5s;
 		}
 
 		html {
@@ -30,7 +30,7 @@
 
 		#hero {
 			background-color: #151618;
-			height: 50vh;
+			height: 100vh;
 			padding-top: 3rem;
 		}
 
@@ -57,6 +57,7 @@
 			padding: 1.5rem 0;
 		}
 
+
 		nav ul a:hover {
 			color: #E8E8E8;
 		}
@@ -76,7 +77,7 @@
 		}
 
 		.has-submenu:hover ul {
-			display: block;
+
 		}
 
 		.has-submenu ul {
@@ -86,7 +87,8 @@
 			background-color: #212224;
 			border-radius: .5rem;
 			padding: .5rem;
-			display: none;
+			display: block;
+
 		}
 
 		.has-submenu ul a {
@@ -96,6 +98,7 @@
 			padding: 1rem;
 			min-width: 15rem;
 			border-radius: .5rem;
+	
 		}
 
 		.has-submenu ul a::after {
@@ -131,7 +134,56 @@
 			cursor: pointer;
 		}
 
+		button:hover {
+			color: white;
+			background-color: #9E70EB;
+
+		}
+
 		/* Air */
+
+		nav ul a {
+			transition-property: color;
+		}
+
+		.has-submenu::after {
+			transition-property: opacity;
+		}
+
+
+		.has-submenu ul {
+			opacity: 0;
+			visibility: hidden;
+			transform: translate3d(-1rem, 0, 0);
+			transition-property: opacity, visibility, transform;
+		}
+
+		.has-submenu:hover ul {
+			opacity: 1;
+			visibility: visible;
+			transform: translate3d(0, 0, 0);
+		}
+
+		.has-submenu ul a::after {
+			transition-property: opacity;
+		}
+
+		.has-submenu ul a{
+			transition-property: background-color, padding;
+		}
+		button {
+			transition-property: background-color, color;
+		}
+
+		nav ul a,
+		.has-submenu::after,
+		.has-submenu ul,
+		.has-submenu ul a::after,
+		.has-submenu ul a,
+		button {
+			transition-duration: var(--def-transition-duration);
+			transition-timing-function: ease-in-out;
+		}
 	</style>
 </head>
 <body>
